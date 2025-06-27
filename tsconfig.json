@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    /* same as before */
+    "module": "commonjs",
+    "target": "ES2021",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+
+    /* ADD THESE: */
+    "moduleResolution": "node",        // <–– key for Node-style lookup
+    "esModuleInterop": true,           // <–– so `import axios from 'axios'` works
+    "resolveJsonModule": true,         // <–– if you ever import *.json
+    "paths": {                         // <–– ensure * always falls back to node_modules
+      "*": ["node_modules/*"]
+    }
+  },
+
+  /* make sure the compiler actually looks at your .ts files: */
+  "include": ["src/**/*.ts", "test/**/*.ts"],
+
+  /* don’t accidentally compile your dependencies or build output: */
+  "exclude": ["node_modules", "dist"]
+}
