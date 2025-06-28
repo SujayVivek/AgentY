@@ -68,7 +68,7 @@ export class TwitterApiService {
     }
   }
 
-  async uploadMedia(file) {
+  async uploadMedia(file : any) {
     return await this.twitterClient.v1.uploadMedia(file);
   }
 
